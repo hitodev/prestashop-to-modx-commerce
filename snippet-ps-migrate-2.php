@@ -1,8 +1,9 @@
 <?php
 /*
 ps-migrate-2
-Prestashop migrate, setp 2/2
+Prestashop to MODX Commerce migrate, step 2/2
 Par Jean-Philippe Dain
+dev.jpdn.net
 
 To create
 Template for product and set $product_template_id
@@ -285,7 +286,7 @@ foreach($products as $product)
       $stock_ids[] = $stock->get('quantity');
     }
     $quantity = $stock_ids[0];
-    echo "<br>quantity: " . $quantity;//for further gallery setup, if variations exists, total
+    echo "<br>quantity: " . $quantity;//if variations exists, total
     
     //TODO: check if product has variations and use a Commerce class to create product variations?
     
