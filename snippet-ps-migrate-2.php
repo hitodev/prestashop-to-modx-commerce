@@ -128,8 +128,6 @@ require_once (MODX_CORE_PATH . 'model/modx/modx.class.php');
 $modx = new modX();
 $modx->initialize('web');
 
-// Add the Quip package
-$can_migrate_comments = false;
 /*
 $can_migrate_comments = $modx->addPackage( 'quip', '../../components/quip/model/',
         $modx->db->config['table_prefix'] );
@@ -216,7 +214,7 @@ foreach($products as $product)
     // all inclusive tax mode for Commerce, recalculate price
     $price_todisplay = number_format(round((($taxcoef / 100) * $price) + $price,2),2);
 
-    //pour test
+    // test
     echo "<br>------------------------------------";
     echo "<br>id_product: " . $id_product;
     echo "<br>id_tax_rules_group: " . $id_tax_rules_group;
