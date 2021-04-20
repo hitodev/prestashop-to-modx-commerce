@@ -1,8 +1,8 @@
 <?php
 /*
-ps-migrate-2
+ps-migrate-2 MODX snippet
 Prestashop to MODX Commerce migrate, step 2/2
-Par Jean-Philippe Dain
+Jean-Philippe Dain
 dev.jpdn.net
 
 To create
@@ -21,7 +21,7 @@ Template for product and set $product_template_id
 //$offset = 13187;
 //$limit = null;
 
-// catégorie dans laquelle placer produits Prestashop
+// Parent category for Commerce products
 $parentforce = 19815;
 
 /**
@@ -128,10 +128,6 @@ require_once (MODX_CORE_PATH . 'model/modx/modx.class.php');
 $modx = new modX();
 $modx->initialize('web');
 
-/*
-$can_migrate_comments = $modx->addPackage( 'quip', '../../components/quip/model/',
-        $modx->db->config['table_prefix'] );
-*/
 // Now instantiate a new xpdo object and add our wordpress package.  This gives
 // us the ability to make queries on the wordpress database as an xpdo object.
 $ps = new xPDO('mysql:host=' . $ps_database_host .
