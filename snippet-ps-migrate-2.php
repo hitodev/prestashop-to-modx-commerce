@@ -128,8 +128,8 @@ require_once (MODX_CORE_PATH . 'model/modx/modx.class.php');
 $modx = new modX();
 $modx->initialize('web');
 
-// Now instantiate a new xpdo object and add our wordpress package.  This gives
-// us the ability to make queries on the wordpress database as an xpdo object.
+// Now instantiate a new xpdo object and add our Prestashop package.  This gives
+// us the ability to make queries on the Prestashop database as an xpdo object.
 $ps = new xPDO('mysql:host=' . $ps_database_host .
         ';dbname=' . $ps_database_name .
         ';charset=' . $ps_database_charset,
@@ -138,10 +138,10 @@ $ps = new xPDO('mysql:host=' . $ps_database_host .
 
 echo $o = ($ps->connect()) ? 'Connected' : 'Not Connected';
 
-//$can_migrate_ps = $wp->addPackage('wordpress','../',$ps_database_prefix);
+//$can_migrate_ps = $wp->addPackage('Prestashop','../',$ps_database_prefix);
 $can_migrate_ps = $ps->addPackage('presta',MODX_CORE_PATH.'components/',$ps_database_prefix);
 
-if (!$can_migrate_ps) die('Wordpress Package could not be loaded.');
+if (!$can_migrate_ps) die('Prestashop Package could not be loaded.');
 
 // set up our default templates in an array
 if (!empty($product_template_id))
